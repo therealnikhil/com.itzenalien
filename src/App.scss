@@ -55,10 +55,10 @@ div {
     }
 
     .social-button {
-      @include values.light-green-filter;
+      background-color: values.$main-light;
 
       &:hover {
-        @include values.light-hover-green-filter;
+        background-color: values.$bg-light-hover;
       }
     }
   }
@@ -87,10 +87,10 @@ div {
     }
 
     .social-button {
-      @include values.dark-green-filter;
+      background-color: values.$main-dark;
 
       &:hover {
-        @include values.dark-hover-green-filter;
+        background-color: values.$bg-dark-hover;
       }
     }
   }
@@ -100,7 +100,7 @@ div {
     
     &.hide-mobile {
       @media (max-width: 767px) {
-        display: none;
+        width: 0;
       }
     }
 
@@ -114,6 +114,7 @@ div {
 
   .left-tile {
     @include values.music-style;
+    @include values.main-shadow;
     
     flex: 1;
     margin-top: values.$z-strip-width;
@@ -140,6 +141,7 @@ div {
   
   .right-tile {
     @include values.code-style;
+    @include values.main-shadow;
     
     flex: 1;
     margin-bottom: values.$z-strip-width;
@@ -178,10 +180,6 @@ div {
       &:hover {
         cursor: pointer;
         font-weight: 600;
-        
-        @media (prefers-reduced-motion: no-preference) {
-          animation: zoom-in ease-in infinite alternate backwards values.$transition-duration;
-        }
       }
 
       .playlist-wrapper {
@@ -207,12 +205,6 @@ div {
       flex-direction: column;
       justify-content: space-between;
       align-items: stretch;
-      opacity: 0;
-
-      @media (prefers-reduced-motion: no-preference) {
-        animation: fade-in values.$transition-duration ease-in-out;
-        animation-fill-mode: forwards;
-      }
 
       h1 {
         font-size: values.$heading-size;
@@ -292,7 +284,7 @@ div {
 
       .upcoming-music {
         flex-direction: row;
-        align-items: stretch;
+        align-items: center;
 
         .upcoming-track-details {
           flex: 1;
@@ -334,13 +326,14 @@ div {
   position: absolute;
 
   .social-button {
+    @include values.main-shadow;
+    
     height: values.$social-btn-width;
     width: values.$social-btn-width;
     border-radius: calc(values.$social-btn-width / 2.0);
     margin: 2px;
     align-items: center;
     justify-content: center;
-    box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.7);
 
     &:hover {
       cursor: pointer;
@@ -413,26 +406,5 @@ div {
   #playlist-img {
     width: 100%!important;
     padding-right: 0!important;
-  }
-}
-
-/***//* ANIMATIONS *//***/
-@keyframes zoom-in {
-  0% {
-    @include values.hover-zoom-initial;
-  }
-  100% {
-    @include values.hover-zoom-final;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    padding-top: 100%;
-  }
-  100% {
-    opacity: 1;
-    padding-top: calc(values.$heading-size / 2.0);
   }
 }

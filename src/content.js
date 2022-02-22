@@ -115,7 +115,7 @@ export const ActionButtons = [
     wide: true
   }, {
     name: 'GitHub',
-    url: 'https://github.com/therealnikhil',
+    url: 'https://github.com/therealnikhil/com.itzenalien/',
     iconURL: '/gh-icon.png'
   }
 ];

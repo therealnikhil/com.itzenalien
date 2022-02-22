@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { GlobalActions, GlobalState } from '../App';
-import { MusicContent as MC, SectionNames } from '../content';
+import { GlobalState } from '../App';
+import { MusicContent as MC } from '../content';
 
 const TrackView = (props) => {
   const { track, id } = props;
@@ -18,10 +18,10 @@ const TrackView = (props) => {
 };
 
 const MusicView = (props) => {
-  const { onClickSection } = useContext(GlobalActions);
+  const { onHide } = props;
   
   return (
-    <div className="section shown" onClick={() => onClickSection(SectionNames.left)}>
+    <div className="section shown" onClick={() => onHide(true)}>
       <div className="past-music">
         <iframe
           id="youtube-frame"
@@ -34,11 +34,11 @@ const MusicView = (props) => {
 
         <div className="track-list">
           {
-            Object.keys(MC.tracks).map((track) => (
-              <>
+            Object.keys(MC.tracks).map((track, index) => (
+              <div key={index} style={{ flexDirection: 'column' }}>
                 <TrackView track={MC.tracks[track]} key={track} id={track} />
                 <div className="hr" key={`line-after-${track}`} />
-              </>
+              </div>
             ))
           }
         </div>

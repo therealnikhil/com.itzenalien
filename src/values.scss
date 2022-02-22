@@ -24,7 +24,7 @@ $bg-dark-hover: #566424;
 $card-border: 1.875rem;
 $z-strip-width : 4.73vh;
 $mobile-width: 767px;
-$social-btn-width: calc($z-strip-width - 4px);
+$social-btn-width: calc($z-strip-width - 8px);
 $social-wrapper-width: calc($social-btn-width * 3 + 12px);
 
 // images
@@ -66,18 +66,6 @@ $transition-duration: 1s;
   font-size: $heading-hover-size;
 }
 
-@mixin light-green-filter {
-  filter: brightness(0) saturate(100%) invert(92%) sepia(7%) saturate(943%) hue-rotate(33deg) brightness(104%) contrast(107%);
-}
-
-@mixin light-hover-green-filter {
-  filter: brightness(0) saturate(100%) invert(92%) sepia(4%) saturate(1877%) hue-rotate(27deg) brightness(93%) contrast(99%);
-}
-
-@mixin dark-hover-green-filter {
-  filter: brightness(0) saturate(100%) invert(29%) sepia(76%) saturate(355%) hue-rotate(32deg) brightness(103%) contrast(89%);
-}
-
-@mixin dark-green-filter {
-  filter: brightness(0) saturate(100%) invert(20%) sepia(55%) saturate(1280%) hue-rotate(42deg) brightness(97%) contrast(101%);
+@mixin main-shadow {
+  box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.7);
 }

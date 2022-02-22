@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
-import { GlobalActions } from '../App';
-import { SectionNames, TechContent } from '../content';
+import React from 'react';
+import { TechContent } from '../content';
 
 const TechView = (props) => {
-  const { onClickSection } = useContext(GlobalActions);
+  const { onHide } = props;
   
   return (
-    <div className="section shown" onClick={() => onClickSection(SectionNames.right)}>
+    <div className="section shown" onClick={() => onHide(false)}>
       <div className="scrollable">
       {
         Object.keys(TechContent).map((category, index) => (
