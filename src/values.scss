@@ -1,0 +1,83 @@
+/*** IMPORT FONTS ***/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+
+/*** VARIABLES ***/
+
+// fonts
+$code-font: 'Fira Code', monospace;
+$apple-font: 'SF Pro Display', sans-serif;
+$heading-size: 1.875rem;
+$heading-hover-size: 2.175rem;
+
+// main colors
+$main-light: #F4FFCA;
+$main-dark: #344300;
+$main-red: #C60000;
+$bg-light-hover: #D5E0A9;
+$bg-dark-hover: #566424;
+
+// day-to-night colors
+
+
+// dimensions
+$card-border: 1.875rem;
+$z-strip-width : 4.73vh;
+$mobile-width: 767px;
+$social-btn-width: calc($z-strip-width - 4px);
+$social-wrapper-width: calc($social-btn-width * 3 + 12px);
+
+// images
+$img-root-path: '../public/';
+
+$leaf: '#{$img-root-path}leaf.jpg';
+$playlist-light: '#{$img-root-path}playlist-light.png';
+$playlist-dark: '#{$img-root-path}playlist-dark.png';
+
+// timing
+$transition-duration: 1s;
+
+/***//* MIXINS *//***/
+@mixin code-style {
+  font-family: $code-font;  
+}
+
+@mixin music-style {
+  font-family: $apple-font;
+}
+
+@mixin light-card {
+  background-color: $main-light;
+  color: $main-dark;
+  font-size: $heading-size;
+}
+
+@mixin dark-card {
+  background-color: $main-dark;
+  color: $main-light;
+  font-size: $heading-size;
+}
+
+@mixin hover-zoom-initial {
+  font-size: inherit;
+}
+
+@mixin hover-zoom-final {
+  font-size: $heading-hover-size;
+}
+
+@mixin light-green-filter {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(7%) saturate(943%) hue-rotate(33deg) brightness(104%) contrast(107%);
+}
+
+@mixin light-hover-green-filter {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(4%) saturate(1877%) hue-rotate(27deg) brightness(93%) contrast(99%);
+}
+
+@mixin dark-hover-green-filter {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(76%) saturate(355%) hue-rotate(32deg) brightness(103%) contrast(89%);
+}
+
+@mixin dark-green-filter {
+  filter: brightness(0) saturate(100%) invert(20%) sepia(55%) saturate(1280%) hue-rotate(42deg) brightness(97%) contrast(101%);
+}
